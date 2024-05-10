@@ -1,82 +1,145 @@
-<!DOCTYPE >
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Manipulating the DOM</title>
-  <!-- Load Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">  <!-- Load Styles -->
-  <link href="css/styles.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Module 3 Solution</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  <!-- HTML Follows BEM naming conventions 
-  IDs are only used for sections to connect menu achors to sections -->
-  <header class="page__header">
-    <nav class="navbar__menu">
-      <div id="food">
-        FOOD, LLC
-      </div> 
-           <!-- Navigation starts as empty UL that will be populated with JS -->
-        <!-- Start of Responsive integrate Icon -->
-        <div id="integrate" class="mobile-btn">
-          <div class="bar bar1"></div>
-          <div class="bar bar2"></div>
-          <div class="bar bar3"></div>
-        </div>
-      <ul id="navbar__list"  class="mobile__nav toggle-show"></ul>
-    </nav>
-  </header>
-  <main>
-    <header class="main__hero">
-      <h1>Our Menu</h1>
-    </header>
-    <!-- Each Section has an ID (used for the anchor) and 
-    a data attribute that will populate the li node.
-    Adding more sections will automatically populate nav.
-    The first section is set to active class by default -->
-    <section id="section1" data-nav="Chicken" class="your-active-class">
-      <div class="landing__container">
-        <h2>Chicken</h2>
-        <p>The customer is very important, the customer will be followed by the customer. Morbid yeast fear of the throat bed quiver of protein. Smartphones Aenean some element of me, and euismod augur. Until he needs the lacinia ex. The investment in the port of the hospital needs to be soft. But the convallis sollicitudin mauris and tincidunt. Until we drink, there is no need to drink, except for some time, such as the pillow that is now being advertised in football. Children's greatest investment is the quiver. My two beds, some in my quis, some in the ferry boat. Diseases caused by tincidunts. But now the eagle, not the quiver and the element, is the taste of life. Intrepid nor free of poison, free of ultricies, always in the earth. But homework and hate but Euismod.</p>
+	<header>
+		<nav id="header-nav" class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<div class="navbar-brand">
+						<a href="index.html">
+							<h1>Food, LLC</h1>
+						</a>
+					</div>
 
-        <p>Just from the valley. We live in danger, we need a pregnant pillow, we want the lake itself, or the mourning diam itself. Tomorrow eu tincidunt arcu, vitae rhoncus purus. The airline will follow up on the activity. Suspended financing of the airline, it does not need a soft element.</p>
-      </div>
-    </section>
-    <section id="section2" data-nav="Beef" >
-      <div class="landing__container">
-        <h2>Beef</h2>
-        <p>The customer is very important, the customer will be followed by the customer. Morbid yeast fear of the throat bed quiver of protein. Smartphones Aenean some element of me, and euismod augur. Until he needs the lacinia ex. The investment in the port of the hospital needs to be soft. But the convallis sollicitudin mauris and tincidunt. Until we drink, there is no need to drink, except for some time, such as the pillow that is now being advertised in football. Children's greatest investment is the quiver. My two beds, some in my quis, some in the ferry boat. Diseases caused by tincidunts. But now the eagle, not the quiver and the element, is the taste of life. Intrepid nor free of poison, free of ultricies, always in the earth. But homework and hate but Euismod.</p>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav"
+					 aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
 
-        <p>Just from the valley. We live in danger, we need a pregnant pillow, we want the lake itself, or the mourning diam itself. Tomorrow eu tincidunt arcu, vitae rhoncus purus. The airline will follow up on the activity. Suspended financing of the airline, it does not need a soft element.</p>
-      </div>
-    </section>
-    <section id="section3" data-nav="Sushi" >
-      <div class="landing__container">
-        <h2>Sushi</h2>
-        <p>The customer is very important, the customer will be followed by the customer. Morbid yeast fear of the throat bed quiver of protein. Smartphones Aenean some element of me, and euismod augur. Until he needs the lacinia ex. The investment in the port of the hospital needs to be soft. But the convallis sollicitudin mauris and tincidunt. Until we drink, there is no need to drink, except for some time, such as the pillow that is now being advertised in football. Children's greatest investment is the quiver. My two beds, some in my quis, some in the ferry boat. Diseases caused by tincidunts. But now the eagle, not the quiver and the element, is the taste of life. Intrepid nor free of poison, free of ultricies, always in the earth. But homework and hate but Euismod.</p>
+				<div id="collapsable-nav" class="collapse navbar-collapse">
+					<ul id="nav-list" class="nav navbar-nav visible-xs">
+						<li><a href="#chicken" class="text-center">Chicken</a></li>
+						<li><a href="#beef" class="text-center">Beef</a></li>
+						<li><a href="#sushi" class="text-center">Sushi</a></li>
+					</ul>
+				</div><!-- .collapse .navbar-collapse -->
+			</div><!-- .container -->
+		</nav><!-- #header-nav -->
+	</header>
 
-        <p>Just from the valley. We live in danger, we need a pregnant pillow, we want the lake itself, or the mourning diam itself. Tomorrow eu tincidunt arcu, vitae rhoncus purus. The airline will follow up on the activity. Suspended financing of the airline, it does not need a soft element.</p>
-      </div>
-    </section>
-    <!-- Creat New Section -->
-    <section id="section4" data-nav="Ice Cream" >
-      <div class="landing__container">
-        <h2>Ice Cream</h2>
-        <p>The customer is very important, the customer will be followed by the customer. Morbid yeast fear of the throat bed quiver of protein. Smartphones Aenean some element of me, and euismod augur. Until he needs the lacinia ex. The investment in the port of the hospital needs to be soft. But the convallis sollicitudin mauris and tincidunt. Until we drink, there is no need to drink, except for some time, such as the pillow that is now being promoted in football. Children's greatest investment is a quiver. My two beds, some in my quis, some in the ferry boat. Diseases caused by tincidunts. But now the lion, not the quiver and the element, is the taste of life. Intrepid and free of poison, free of ultricies always in the land. But homework and hate but Euismod.</p>
+	<div id="main-content" class="container">
+		<h2 id="page-title" class="text-center">Our Menu</h2>
+		<section class="row">
+			<div id="main-text" class="col-xs-12">
+				<div class="text-background">
+					<h3 id="chicken">Chicken</h3>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+						Aenean
+						massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+						Donec
+						quam
+						felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+						Donec
+						pede
+						justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
+						a,venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+						dapibus.Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+						porttitor
+						eu,
+						consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+						tellus.Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+						ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+						Maecenas
+						tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit adipiscing sem neque sed
+						ipsum.
+						Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante
+						tincidunt
+						tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci
+						eget
+						eros
+						faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
+						Sed
+						consequat, leo eget bibendum sodales, augue velit cursus nunc.
+					</p>
+					<h3 id="beef">Beef</h3>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+						Aenean
+						massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+						Donec
+						quam
+						felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+						Donec
+						pede
+						justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
+						a,venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+						dapibus.Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+						porttitor
+						eu,
+						consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+						tellus.Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+						ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+						Maecenas
+						tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit adipiscing sem neque sed
+						ipsum.
+						Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante
+						tincidunt
+						tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci
+						eget
+						eros
+						faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
+						Sed
+						consequat, leo eget bibendum sodales, augue velit cursus nunc.
+					</p>
+					<h3 id="sushi">Sushi</h3>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+						Aenean
+						massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+						Donec
+						quam
+						felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+						Donec
+						pede
+						justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
+						a,venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+						dapibus.Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+						porttitor
+						eu,
+						consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+						tellus.Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+						ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+						Maecenas
+						tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit adipiscing sem neque sed
+						ipsum.
+						Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante
+						tincidunt
+						tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci
+						eget
+						eros
+						faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
+						Sed
+						consequat, leo eget bibendum sodales, augue velit cursus nunc.
+					</p>
+				</div>
+			</div>
+		</section>
+	</div>
 
-        <p>Just from the valley. We live in danger, we need a pregnant pillow, we want the lake itself, or the mourning diam itself. Tomorrow eu tincidunt arcu, vitae rhoncus purus. The airline will follow up on the activity. Suspended financing of the airline, it does not need a soft element.</p>
-      </div>
-    </section>
-  </main>
-  <footer class="page__footer">
-    <p>&copy Samarth</p>
-  </footer>
-  
-  <div class="scroll-top">
-    <a class="scroll-top-link" href="#">&#8593;</a>
-  </div>
-   <!-- JavaScript file -->
-   <script src="./js/app.js"></script>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
+
 </html>
